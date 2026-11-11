@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizonte Pessoal | Meu Projeto de Vida</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-content">
+            <div class="logo">
+                <span class="logo-icon">🧭</span>
+                <span>Horizonte<strong>Pessoal</strong></span>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#identidade">Identidade</a></li>
+                    <li><a href="#pilares">Pilares</a></li>
+                    <li><a href="#roda-vida">Roda da Vida</a></li>
+                    <li><a href="#plano-acao">Plano de Ação</a></li>
+                </ul>
+            </nav>
+            <button id="btn-exportar" class="btn-outline" title="Imprimir ou Salvar como PDF">🖨️ Salvar PDF</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <span class="badge">Autoconhecimento & Planejamento</span>
+            <h1>Construa o futuro que você deseja viver</h1>
+            <p>Organize seus sonhos, descubra seus valores, avalie seu momento atual e trace metas reais para transformar seu Projeto de Vida em realidade.</p>
+            <a href="#identidade" class="btn-primary">Começar Meu Planejamento</a>
+        </div>
+    </section>
+
+    <main class="container main-grid">
+        <!-- SEÇÃO 1: IDENTIDADE E PROPÓSITO -->
+        <section id="identidade" class="card">
+            <div class="card-header">
+                <h2>1. Quem Sou Eu & Meu Propósito</h2>
+                <span class="status-save" id="status-save">Salvo automaticamente</span>
+            </div>
+            <p class="section-desc">O ponto de partida de qualquer Projeto de Vida é reconhecer sua história, seus talentos e onde você quer chegar.</p>
+            
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="nome">Seu Nome Completo</label>
+                    <input type="text" id="nome" placeholder="Ex: Maria Clara Santos">
+                </div>
+                <div class="form-group">
+                    <label for="idade">Idade / Fase Atual</label>
+                    <input type="text" id="idade" placeholder="Ex: 17 anos - Ensino Médio / Universitário">
+                </div>
+                <div class="form-group full-width">
+                    <label for="valores">Meus 3 Valores Inegociáveis</label>
+                    <input type="text" id="valores" placeholder="Ex: Honestidade, Família, Liberdade">
+                </div>
+                <div class="form-group full-width">
+                    <label for="sonho-grande">Meu Grande Sonho (Visão de 5 a 10 anos)</label>
+                    <textarea id="sonho-grande" rows="3" placeholder="Descreva como você se imagina no futuro pessoal, profissional e social..."></textarea>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 2: OS 3 PILARES DO PROJETO DE VIDA -->
+        <section id="pilares" class="card">
+            <h2>2. Os 3 Pilares do Projeto de Vida</h2>
+            <p class="section-desc">Um projeto equilibrado contempla quem você é, como convive com o mundo e o que constrói profissionalmente.</p>
+            
+            <div class="pilares-grid">
+                <div class="pilar-box pilar-pessoal">
+                    <div class="pilar-icon">🌱</div>
+                    <h3>Dimensão Pessoal</h3>
+                    <p>Autoconhecimento, saúde física e emocional, inteligência emocional e autoestima.</p>
+                    <textarea id="pilar-pessoal-texto" rows="3" placeholder="O que quero desenvolver em mim mesmo?"></textarea>
+                </div>
+
+                <div class="pilar-box pilar-social">
+                    <div class="pilar-icon">🤝</div>
+                    <h3>Dimensão Social</h3>
+                    <p>Relacionamentos, família, empatia, cidadania e impacto positivo na comunidade.</p>
+                    <textarea id="pilar-social-texto" rows="3" placeholder="Como quero contribuir com as pessoas ao meu redor?"></textarea>
+                </div>
+
+                <div class="pilar-box pilar-profissional">
+                    <div class="pilar-icon">🚀</div>
+                    <h3>Dimensão Produtiva</h3>
+                    <p>Estudos, carreira, vocação, habilidades técnicas e independência financeira.</p>
+                    <textarea id="pilar-profissional-texto" rows="3" placeholder="Quais caminhos de estudo e trabalho quero seguir?"></textarea>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 3: RODA DA VIDA INTERATIVA -->
+        <section id="roda-vida" class="card">
+            <h2>3. Diagnóstico: Roda da Vida</h2>
+            <p class="section-desc">Avalie de 1 a 10 seu nível de satisfação atual em cada área da sua vida.</p>
+            
+            <div class="roda-container">
+                <div class="sliders-list" id="sliders-container">
+                    <!-- Gerado via JavaScript -->
+                </div>
+                <div class="canvas-wrapper">
+                    <canvas id="rodaCanvas" width="380" height="380"></canvas>
+                    <p class="media-geral">Índice de Equilíbrio Geral: <strong id="media-valor">5.0</strong> / 10</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 4: PLANO DE AÇÃO E METAS -->
+        <section id="plano-acao" class="card">
+            <h2>4. Meu Plano de Ação e Metas</h2>
+            <p class="section-desc">Transforme sonhos em passos concretos de curto, médio e longo prazo.</p>
+            
+            <form id="form-meta" class="meta-form">
+                <input type="text" id="meta-titulo" placeholder="Qual é a sua meta? (Ex: Concluir curso de inglês)" required>
+                <select id="meta-prazo">
+                    <option value="Curto Prazo (até 1 ano)">Curto Prazo (até 1 ano)</option>
+                    <option value="Médio Prazo (1 a 3 anos)">Médio Prazo (1 a 3 anos)</option>
+                    <option value="Longo Prazo (3+ anos)">Longo Prazo (3+ anos)</option>
+                </select>
+                <select id="meta-pilar">
+                    <option value="Pessoal">Pessoal</option>
+                    <option value="Social">Social</option>
+                    <option value="Profissional">Profissional</option>
+                </select>
+                <button type="submit" class="btn-primary">+ Adicionar Meta</button>
+            </form>
+
+            <div class="filtros-metas">
+                <button class="filtro-btn active" data-filtro="Todas">Todas</button>
+                <button class="filtro-btn" data-filtro="Pendentes">Em Andamento</button>
+                <button class="filtro-btn" data-filtro="Concluidas">Concluídas</button>
+            </div>
+
+            <ul id="lista-metas" class="lista-metas">
+                <!-- Metas inseridas via JavaScript -->
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p><strong>Horizonte Pessoal</strong> — Ferramenta Interativa de Projeto de Vida</p>
+            <p class="footer-sub">Seus dados ficam salvos localmente no seu navegador com total privacidade.</p>
+            <button id="btn-limpar" class="btn-danger-link">Resetar todos os dados</button>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
